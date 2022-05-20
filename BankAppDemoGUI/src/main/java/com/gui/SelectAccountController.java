@@ -46,6 +46,10 @@ public class SelectAccountController {
         FXMLLoader fxmlLoader = new FXMLLoader(BankApplication.class.getResource("createAccount.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
+        CreateAccountController createAccCon = fxmlLoader.getController();
+        createAccCon.setUser(this.user);
+        createAccCon.setAccountList(accountList);
+
         createAccStage.setTitle("CREATE_ACCOUNT");
         createAccStage.setScene(scene);
         createAccStage.initModality(Modality.APPLICATION_MODAL);
