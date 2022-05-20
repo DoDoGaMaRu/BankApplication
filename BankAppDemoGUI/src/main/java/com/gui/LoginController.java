@@ -31,7 +31,7 @@ public class LoginController {
                 primaryStage.setTitle("SELECT");
                 primaryStage.setScene(scene);
 
-                SelectAccountController selAccCon = loader.<SelectAccountController>getController();
+                SelectAccountController selAccCon = loader.getController();
                 selAccCon.setUser(new User("홍길동"));
 
                 primaryStage.show();
@@ -68,5 +68,4 @@ public class LoginController {
             login();
         }
     }
-
 }
