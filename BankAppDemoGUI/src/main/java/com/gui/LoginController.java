@@ -40,6 +40,21 @@ public class LoginController {
         }
     }
 
+    public void signUp() {
+        Stage signUpStage = new Stage();
+
+        try {
+            FXMLLoader loader = new FXMLLoader(BankApplication.class.getResource("signUp.fxml"));
+            Scene scene = new Scene(loader.load());
+
+            signUpStage.setTitle("SignUp");
+            signUpStage.setScene(scene);
+            signUpStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void closeStage() {
         Stage stage = (Stage) idTextField.getScene().getWindow();
         stage.close();

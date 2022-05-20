@@ -10,9 +10,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.LoginController">
    <children>
-      <TextField fx:id="idTextField" layoutX="64.0" layoutY="106.0" prefHeight="41.0" prefWidth="241.0" promptText="ID" />
-      <PasswordField fx:id="pwTextField" layoutX="64.0" layoutY="166.0" prefHeight="41.0" prefWidth="241.0" promptText="P/W" />
-      <Button fx:id="loginButton" layoutX="343.0" layoutY="106.0" mnemonicParsing="false" onAction="#login" prefHeight="102.0" prefWidth="89.0" style="-fx-background-color: gray;" text="Login" textFill="WHITE">
+      <TextField fx:id="idTextField" layoutX="64.0" layoutY="106.0" onKeyPressed="#enterLogin" prefHeight="41.0" prefWidth="241.0" promptText="ID" />
+      <PasswordField fx:id="pwTextField" layoutX="64.0" layoutY="166.0" onKeyPressed="#enterLogin" prefHeight="41.0" prefWidth="241.0" promptText="P/W" />
+      <Button fx:id="loginButton" layoutX="343.0" layoutY="106.0" mnemonicParsing="false" onAction="#login" onKeyPressed="#enterLogin" prefHeight="102.0" prefWidth="89.0" style="-fx-background-color: gray;" text="Login" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
@@ -21,7 +21,7 @@
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button layoutX="314.0" layoutY="248.0" mnemonicParsing="false" style="-fx-background-color: Invisible;" text="sign up">
+      <Button layoutX="314.0" layoutY="248.0" mnemonicParsing="false" onAction="#signUp" style="-fx-background-color: Invisible;" text="sign up">
          <font>
             <Font size="13.0" />
          </font></Button>
