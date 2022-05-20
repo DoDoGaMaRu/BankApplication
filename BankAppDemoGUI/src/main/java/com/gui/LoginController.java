@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class LoginController {
@@ -38,6 +39,22 @@ public class LoginController {
             catch(Exception e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public void signUp() {
+        Stage signUpStage = new Stage();
+
+        try {
+            FXMLLoader loader = new FXMLLoader(BankApplication.class.getResource("signUp.fxml"));
+            Scene scene = new Scene(loader.load());
+
+            signUpStage.setTitle("SignUp");
+            signUpStage.setScene(scene);
+            signUpStage.initModality(Modality.APPLICATION_MODAL);
+            signUpStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
         }
     }
 
