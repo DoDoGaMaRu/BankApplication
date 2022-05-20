@@ -46,7 +46,6 @@ public class signUpController {
             alert.setHeaderText("SignUpFailed");
             alert.setContentText("password and confirm password is different!");
             alert.showAndWait();
-
         }
     }
 
