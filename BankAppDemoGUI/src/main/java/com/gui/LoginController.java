@@ -3,6 +3,7 @@ package com.gui;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -14,6 +15,8 @@ public class LoginController {
     private TextField idTextField;
     @FXML
     private TextField pwTextField;
+    @FXML
+    private Label errorLabel;
 
     @FXML
     public void login() {
@@ -39,6 +42,9 @@ public class LoginController {
             catch(Exception e) {
                 e.printStackTrace();
             }
+        }
+        else {
+            errorLabel.setText("ID or P/W is incorrect");
         }
     }
 
