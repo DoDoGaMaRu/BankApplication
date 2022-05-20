@@ -1,5 +1,6 @@
 package com.gui;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -15,6 +16,8 @@ public class AccountOptionController {
     @FXML private Label accNum;
     @FXML private Label balance;
     @FXML private TextField amount;
+    @FXML private Label messageLabel;
+    @FXML private TextField pwTextField;
 
     public void setAccount(Account acc) {
         this.acc = acc;
@@ -26,8 +29,6 @@ public class AccountOptionController {
         this.prevScene = prevScene;
     }
 
-
-
     public void back() throws IOException {
         Scene thisScene = accNum.getScene();
         Stage stage = (Stage) thisScene.getWindow();
@@ -35,4 +36,27 @@ public class AccountOptionController {
         stage.setTitle("SELECT");
         stage.setScene(prevScene);
     }
+
+    public void withdraw(ActionEvent actionEvent) {
+        if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
+            acc.withdraw(Integer.parseInt(amount.getText()));
+            messageLabel.setText("Succeed Withdraw!");
+            balance.setText(String.format("%d",acc.getBalance()));
+        }
+        else {
+            messageLabel.setText("Wrong Pin!");
+        }
+    }
+
+    public void deposit(ActionEvent actionEvent) {
+        if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
+            acc.deposit(Integer.parseInt(amount.getText()));
+            messageLabel.setText("Succeed Deposit!");
+            balance.setText(String.format("%d",acc.getBalance()));
+        }
+        else {
+            messageLabel.setText("Wrong Pin!");
+        }
+    }
+
 }
