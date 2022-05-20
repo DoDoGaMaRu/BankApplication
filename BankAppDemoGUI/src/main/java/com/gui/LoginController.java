@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 public class LoginController {
@@ -41,5 +43,11 @@ public class LoginController {
     public void closeStage() {
         Stage stage = (Stage) idTextField.getScene().getWindow();
         stage.close();
+    }
+
+    public void enterLogin(KeyEvent keyEvent) {
+        if ( keyEvent.getCode().equals(KeyCode.ENTER) ) {
+            login();
+        }
     }
 }
