@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.LoginController">
+   <children>
+      <TextField fx:id="idTextField" layoutX="64.0" layoutY="106.0" prefHeight="41.0" prefWidth="241.0" promptText="ID" />
+      <PasswordField fx:id="pwTextField" layoutX="64.0" layoutY="166.0" prefHeight="41.0" prefWidth="241.0" promptText="P/W" />
+      <Button fx:id="loginButton" layoutX="343.0" layoutY="106.0" mnemonicParsing="false" onAction="#login" prefHeight="102.0" prefWidth="89.0" style="-fx-background-color: gray;" text="Login" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="107.0" layoutY="249.0" mnemonicParsing="false" style="-fx-background-color: Invisible;" text="아이디조회">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Button layoutX="314.0" layoutY="248.0" mnemonicParsing="false" style="-fx-background-color: Invisible;" text="sign up">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Button layoutX="194.0" layoutY="249.0" mnemonicParsing="false" style="-fx-background-color: Invisible;" text="비밀번호재등록">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Label layoutX="150.0" layoutY="31.0" prefHeight="48.0" prefWidth="197.0" text="BANK APP LOGIN ">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Line endX="4.3333282470703125" endY="9.0" layoutX="186.0" layoutY="259.0" startX="4.3333282470703125" startY="-7.66668701171875" stroke="#747474" />
+      <Line endX="4.3333282470703125" endY="9.0" layoutX="299.0" layoutY="259.0" startX="4.3333282470703125" startY="-7.66668701171875" stroke="#747474" />
+   </children>
+</AnchorPane>
