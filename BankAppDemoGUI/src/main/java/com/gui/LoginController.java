@@ -34,7 +34,8 @@ public class LoginController {
                 selAccCon.setUser(new User("홍길동"));
 
                 primaryStage.show();
-            } catch(Exception e) {
+            }
+            catch(Exception e) {
                 e.printStackTrace();
             }
         }
