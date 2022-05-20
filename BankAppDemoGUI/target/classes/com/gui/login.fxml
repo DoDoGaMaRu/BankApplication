@@ -12,7 +12,7 @@
    <children>
       <TextField fx:id="idTextField" layoutX="64.0" layoutY="106.0" prefHeight="41.0" prefWidth="241.0" promptText="ID" />
       <PasswordField fx:id="pwTextField" layoutX="64.0" layoutY="166.0" prefHeight="41.0" prefWidth="241.0" promptText="P/W" />
-      <Button fx:id="loginButton" layoutX="343.0" layoutY="106.0" mnemonicParsing="false" onAction="#login" prefHeight="102.0" prefWidth="89.0" style="-fx-background-color: gray;" text="Login" textFill="WHITE">
+      <Button fx:id="loginButton" layoutX="343.0" layoutY="106.0" mnemonicParsing="false" onAction="#login" onKeyPressed="#login" prefHeight="102.0" prefWidth="89.0" style="-fx-background-color: gray;" text="Login" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
