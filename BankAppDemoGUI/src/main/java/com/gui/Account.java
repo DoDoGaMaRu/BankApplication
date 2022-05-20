@@ -28,6 +28,10 @@ public class Account {
         balance -= amount;
     }
 
+    public void transfer(int accNum, int amount) {
+        balance -= amount;
+    }
+
     public boolean validatePIN(int pin) {
         return (pin == this.pin) ? true : false;
     }
