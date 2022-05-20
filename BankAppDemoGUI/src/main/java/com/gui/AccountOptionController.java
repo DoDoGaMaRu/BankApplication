@@ -40,7 +40,7 @@ public class AccountOptionController {
     public void withdraw(ActionEvent actionEvent) {
         if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
             acc.withdraw(Integer.parseInt(amount.getText()));
-            messageLabel.setText("Succeed Withdraw!");
+            messageLabel.setText("Withdraw Succeed!");
             balance.setText(String.format("%d",acc.getBalance()));
         }
         else {
@@ -51,7 +51,7 @@ public class AccountOptionController {
     public void deposit(ActionEvent actionEvent) {
         if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
             acc.deposit(Integer.parseInt(amount.getText()));
-            messageLabel.setText("Succeed Deposit!");
+            messageLabel.setText("Deposit Succeed!");
             balance.setText(String.format("%d",acc.getBalance()));
         }
         else {
