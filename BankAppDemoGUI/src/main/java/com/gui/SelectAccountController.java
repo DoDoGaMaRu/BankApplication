@@ -13,19 +13,16 @@ public class SelectAccountController {
     @FXML
     private Label userName;
     @FXML
-    private ListView accountList;
+    private ListView<String> accountList;
 
     private User user;
 
     public void setUser(User user) {
         this.user = user;
         userName.setText(user.getName());
+        accountList.getItems().add(user.getAccount().toString());
     }
 
-    public void roadAccounts() {
-        // accountList.
-        // 만들어야할듯
-    }
 
     @FXML
     public void logout() throws IOException {
@@ -39,4 +36,5 @@ public class SelectAccountController {
         stage.setScene(scene);
         stage.show();
     }
+
 }
