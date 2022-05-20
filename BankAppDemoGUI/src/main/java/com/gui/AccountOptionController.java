@@ -34,6 +34,5 @@ public class AccountOptionController {
 
         stage.setTitle("SELECT");
         stage.setScene(prevScene);
-        stage.show();
     }
 }
