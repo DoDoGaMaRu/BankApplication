@@ -14,7 +14,7 @@ public class CreateAccountController {
 
     private static int accNum = 1;
 
-    private ListView<String> accountList;
+    private ListView<Account> accountList;
     @FXML
     private PasswordField pinField;
 
@@ -33,7 +33,7 @@ public class CreateAccountController {
 
         if ( pin.equals(pinConfirm) ) {
 
-            accountList.getItems().add(new Account(++accNum, Integer.parseInt(pin), 0).toString());
+            accountList.getItems().add(new Account(++accNum, Integer.parseInt(pin), 0));
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Confirmation Dialog");
@@ -58,7 +58,7 @@ public class CreateAccountController {
         }
     }
 
-    public void setAccountList(ListView<String> accountList) {
+    public void setAccountList(ListView<Account> accountList) {
         this.accountList = accountList;
     }
 }
