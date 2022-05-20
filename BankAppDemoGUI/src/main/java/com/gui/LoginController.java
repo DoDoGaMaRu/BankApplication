@@ -13,12 +13,10 @@ import javafx.stage.Stage;
 public class LoginController {
     private static User user = new User("홍길동", "admin", "1234");
 
-    @FXML
-    private TextField idTextField;
-    @FXML
-    private TextField pwTextField;
-    @FXML
-    private Label errorLabel;
+    @FXML private TextField idTextField;
+    @FXML private TextField pwTextField;
+    @FXML private Label errorLabel;
+
 
     @FXML
     public void login() {
@@ -33,12 +31,11 @@ public class LoginController {
                 FXMLLoader loader = new FXMLLoader(BankApplication.class.getResource("selectAccount.fxml"));
                 Scene scene = new Scene(loader.load());
 
-                primaryStage.setTitle("SELECT");
-                primaryStage.setScene(scene);
-
                 SelectAccountController selAccCon = loader.getController();
                 selAccCon.setUser(user);
 
+                primaryStage.setTitle("SELECT");
+                primaryStage.setScene(scene);
                 primaryStage.show();
             }
             catch(Exception e) {
