@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="BankAPPGUI" />
+        <module name="BankAppDemoGUI" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="BankAPPGUI" target="11" />
+      <module name="BankAppDemoGUI" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
