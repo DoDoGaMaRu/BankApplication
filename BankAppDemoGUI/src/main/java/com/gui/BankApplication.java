@@ -14,7 +14,6 @@ public class BankApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load());
 
         stage.setTitle("BANK APP");
-        // test
         stage.setScene(scene);
         stage.show();
     }
