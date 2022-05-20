@@ -6,10 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="150.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.TransferMenuController">
    <children>
-      <Button layoutX="205.0" layoutY="98.0" mnemonicParsing="false" style="-fx-background-color: gray;" text="Transfer" textFill="WHITE">
+      <Button layoutX="205.0" layoutY="98.0" mnemonicParsing="false" onAction="#transfer" style="-fx-background-color: gray;" text="Transfer" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
@@ -19,12 +18,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="19.0" layoutY="103.0" prefHeight="19.0" prefWidth="179.0" text="m">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField layoutX="20.0" layoutY="51.0" prefHeight="30.0" prefWidth="261.0">
+      <TextField fx:id="enteredAccNum" layoutX="20.0" layoutY="51.0" prefHeight="30.0" prefWidth="261.0">
          <font>
             <Font size="15.0" />
          </font>
