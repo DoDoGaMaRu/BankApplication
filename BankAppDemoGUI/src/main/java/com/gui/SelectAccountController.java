@@ -14,14 +14,14 @@ public class SelectAccountController {
     @FXML
     private Label userName;
     @FXML
-    private ListView<String> accountList;
+    private ListView<Account> accountList;
 
     private User user;
 
     public void setUser(User user) {
         this.user = user;
         userName.setText(user.getName());
-        accountList.getItems().add(user.getAccount().toString());
+        accountList.getItems().add(user.getAccount());
     }
 
 

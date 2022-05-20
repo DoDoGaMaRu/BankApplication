@@ -1,73 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="310.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.AccountOptionController">
+<AnchorPane prefHeight="310.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.AccountOptionController">
    <children>
       <Button layoutX="18.0" layoutY="266.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: invisable;" text="&lt; Back">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Label layoutX="155.0" layoutY="65.0" prefHeight="22.0" prefWidth="139.0" text="Account number : ">
+      <Label layoutX="155.0" layoutY="51.0" prefHeight="22.0" prefWidth="139.0" text="Account number : ">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="221.0" layoutY="95.0" prefHeight="19.0" prefWidth="69.0" text="Balance :">
+      <Label layoutX="221.0" layoutY="81.0" prefHeight="19.0" prefWidth="69.0" text="Balance :">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="accNum" alignment="CENTER_RIGHT" layoutX="299.0" layoutY="66.0" prefHeight="20.0" prefWidth="139.0" text="a">
+      <Label fx:id="accNum" alignment="CENTER_RIGHT" layoutX="299.0" layoutY="52.0" prefHeight="20.0" prefWidth="139.0">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="balance" alignment="CENTER_RIGHT" layoutX="299.0" layoutY="95.0" prefHeight="20.0" prefWidth="119.0" text="b">
+      <Label fx:id="balance" alignment="CENTER_RIGHT" layoutX="299.0" layoutY="81.0" prefHeight="20.0" prefWidth="119.0">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Button layoutX="352.0" layoutY="203.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: gray;" text="Transfer" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="252.0" layoutY="203.0" mnemonicParsing="false" style="-fx-background-color: gray;" text="Withdraw" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <Button layoutX="154.0" layoutY="203.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: gray;" text="Deposit" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <TextField fx:id="amount" alignment="CENTER_RIGHT" layoutX="184.0" layoutY="155.0" prefHeight="30.0" prefWidth="222.0" promptText="Amount">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </TextField>
       <Label layoutX="422.0" layoutY="160.0" text="₩">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="423.0" layoutY="95.0" text="₩">
+      <Label layoutX="423.0" layoutY="81.0" text="₩">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="131.0" layoutX="18.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
-      <Label alignment="CENTER" layoutX="154.0" layoutY="244.0" prefHeight="30.0" prefWidth="283.0" text="m">
+      <Label fx:id="messageLabel" alignment="CENTER" layoutX="154.0" layoutY="244.0" prefHeight="30.0" prefWidth="283.0">
          <font>
             <Font size="15.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="pwTextField" alignment="CENTER_RIGHT" layoutX="314.0" layoutY="108.0" prefHeight="29.0" prefWidth="131.0" promptText="Account Pin" />
+      <TextField fx:id="amount" alignment="CENTER_RIGHT" layoutX="184.0" layoutY="155.0" prefHeight="30.0" prefWidth="222.0" promptText="Amount">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="depositButton" layoutX="154.0" layoutY="203.0" mnemonicParsing="false" onAction="#deposit" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: gray;" text="Deposit" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="withdrawButton" layoutX="252.0" layoutY="203.0" mnemonicParsing="false" onAction="#withdraw" style="-fx-background-color: gray;" text="Withdraw" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="352.0" layoutY="203.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: gray;" text="Transfer" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER_RIGHT" layoutX="160.0" layoutY="112.0" prefHeight="21.0" prefWidth="139.0" text="Account Pin">
+         <font>
+            <Font size="17.0" />
          </font>
       </Label>
    </children>
