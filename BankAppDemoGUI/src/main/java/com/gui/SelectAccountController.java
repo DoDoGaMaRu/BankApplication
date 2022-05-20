@@ -1,5 +1,6 @@
 package com.gui;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -24,7 +25,6 @@ public class SelectAccountController {
     }
 
 
-    @FXML
     public void logout() throws IOException {
         Stage stage = (Stage) userName.getScene().getWindow();
         stage.close();
@@ -37,4 +37,33 @@ public class SelectAccountController {
         stage.show();
     }
 
+
+
+    public void createAccount() throws IOException {
+        Stage stage = new Stage();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(BankApplication.class.getResource("createAccount.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        stage.setTitle("CREATE_ACCOUNT");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void select(ActionEvent actionEvent) throws IOException {
+        Scene thisScene = userName.getScene();
+        Stage stage = (Stage) thisScene.getWindow();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(BankApplication.class.getResource("accountOption.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        stage.setTitle("CREATE_ACCOUNT");
+        stage.setScene(scene);
+
+        AccountOptionController accOptionCon = fxmlLoader.getController();
+        accOptionCon.setAccount(user.getAccount());
+        accOptionCon.setPrevScene(thisScene);
+
+        stage.show();
+    }
 }
