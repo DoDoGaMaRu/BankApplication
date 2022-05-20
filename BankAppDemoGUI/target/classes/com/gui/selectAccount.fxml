@@ -37,5 +37,10 @@
             <Font size="15.0" />
          </font>
       </Button>
+      <Button layoutX="381.0" layoutY="65.0" mnemonicParsing="false" onAction="#refreshAccList" style="-fx-background-color: gray;" text="Refresh" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
