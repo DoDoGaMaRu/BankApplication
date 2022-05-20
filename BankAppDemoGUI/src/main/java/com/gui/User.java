@@ -1,21 +1,38 @@
 package com.gui;
 
+import java.util.ArrayList;
+
 public class User {
     private String name;
-    private int id;
-    private int pwd;
-    private Account account;
+    private String id;
+    private String pwd;
+    private ArrayList<Account> accounts;
 
-    public User (String name) {
+    public User(String name, String id, String pwd) {
         this.name = name;
-        this.account = new Account(11,5000);
+        this.id = id;
+        this.pwd = pwd;
+        accounts = new ArrayList<>();
+        accounts.add(new Account(11,5000));
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getPwd() {
+        return pwd;
     }
 
     public String getName() {
         return name;
     }
 
-    public Account getAccount(){
-        return account;
+    public ArrayList<Account> getAccounts(){
+        return accounts;
+    }
+
+    public void addAccount(Account newAccount) {
+        accounts.add(newAccount);
     }
 }

@@ -11,6 +11,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class LoginController {
+    private static User user = new User("홍길동", "admin", "1234");
+
     @FXML
     private TextField idTextField;
     @FXML
@@ -23,7 +25,7 @@ public class LoginController {
         String id = idTextField.getText();
         String pw = pwTextField.getText();
 
-        if (id.equals("admin") && pw.equals("1234")) {
+        if (id.equals(user.getId()) && pw.equals(user.getPwd())) {
             closeStage();
 
             Stage primaryStage = new Stage();
@@ -35,7 +37,7 @@ public class LoginController {
                 primaryStage.setScene(scene);
 
                 SelectAccountController selAccCon = loader.getController();
-                selAccCon.setUser(new User("홍길동"));
+                selAccCon.setUser(user);
 
                 primaryStage.show();
             }

@@ -9,19 +9,28 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class SelectAccountController {
-    @FXML
-    private Label userName;
-    @FXML
-    private ListView<Account> accountList;
-
     private User user;
+
+    @FXML private Label userName;
+    @FXML private ListView<Account> accountList;
+
 
     public void setUser(User user) {
         this.user = user;
         userName.setText(user.getName());
-        accountList.getItems().add(user.getAccount());
+        refreshAccList();
+    }
+
+    public void refreshAccList() {
+        accountList.getItems().clear();
+        ArrayList<Account> accounts = user.getAccounts();
+
+        for(Account acc : accounts) {
+            accountList.getItems().add(acc);
+        }
     }
 
 
@@ -48,7 +57,6 @@ public class SelectAccountController {
 
         CreateAccountController createAccCon = fxmlLoader.getController();
         createAccCon.setUser(this.user);
-        createAccCon.setAccountList(accountList);
 
         createAccStage.setTitle("CREATE_ACCOUNT");
         createAccStage.setScene(scene);
