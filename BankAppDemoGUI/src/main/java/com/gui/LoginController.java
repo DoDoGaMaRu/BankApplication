@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class LoginController {
@@ -50,6 +51,7 @@ public class LoginController {
 
             signUpStage.setTitle("SignUp");
             signUpStage.setScene(scene);
+            signUpStage.initModality(Modality.APPLICATION_MODAL);
             signUpStage.show();
         } catch(Exception e) {
             e.printStackTrace();
