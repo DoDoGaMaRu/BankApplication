@@ -68,6 +68,5 @@ public class SelectAccountController {
 
         stage.setTitle("ACCOUNT_OPTION");
         stage.setScene(scene);
-        stage.show();
     }
 }
