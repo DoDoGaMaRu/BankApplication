@@ -20,7 +20,6 @@ public class LoginController {
         if (id.equals("admin") && pw.equals("1234")) {
             closeStage();
 
-
             Stage primaryStage = new Stage();
             try {
                 FXMLLoader loader = new FXMLLoader(BankApplication.class.getResource("selectAccount.fxml"));
