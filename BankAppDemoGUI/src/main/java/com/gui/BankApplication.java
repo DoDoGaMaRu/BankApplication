@@ -15,6 +15,7 @@ public class BankApplication extends Application {
 
         stage.setTitle("BANK APP");
         // test
+        //test2
         stage.setScene(scene);
         stage.show();
     }
