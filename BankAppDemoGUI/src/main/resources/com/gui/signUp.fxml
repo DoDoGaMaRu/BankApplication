@@ -23,7 +23,7 @@
             <Font size="13.0" />
          </font>
       </PasswordField>
-      <PasswordField fx:id="pwconfirm" layoutX="83.0" layoutY="189.0" onKeyPressed="#enterSignUp" prefHeight="29.0" prefWidth="141.0" promptText="P/W confirm">
+      <PasswordField fx:id="pwConfirm" layoutX="83.0" layoutY="189.0" onKeyPressed="#enterSignUp" prefHeight="29.0" prefWidth="141.0" promptText="P/W confirm">
          <font>
             <Font size="13.0" />
          </font>

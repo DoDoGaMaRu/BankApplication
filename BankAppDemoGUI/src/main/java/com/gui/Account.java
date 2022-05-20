@@ -1,12 +1,13 @@
 package com.gui;
 
 public class Account {
+    private static int staticAccNum;
     private int accountNumber;
     private int pin;
     private int balance;
 
-    public Account(int number, int pin, int amount) {
-        accountNumber = number;
+    public Account(int pin, int amount) {
+        accountNumber = ++staticAccNum;
         this.pin = pin;
         balance = amount;
     }

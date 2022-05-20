@@ -8,7 +8,7 @@ public class User {
 
     public User (String name) {
         this.name = name;
-        this.account = new Account(1,11,5000);
+        this.account = new Account(11,5000);
     }
 
     public String getName() {

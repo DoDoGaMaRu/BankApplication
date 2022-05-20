@@ -67,7 +67,7 @@ public class SelectAccountController {
         Scene scene = new Scene(fxmlLoader.load());
 
         AccountOptionController accOptionCon = fxmlLoader.getController();
-        accOptionCon.setAccount(user.getAccount());
+        accOptionCon.setAccount(accountList.getSelectionModel().getSelectedItem());
         accOptionCon.setPrevScene(thisScene);
 
         stage.setTitle("ACCOUNT_OPTION");
