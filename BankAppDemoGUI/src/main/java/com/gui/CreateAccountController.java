@@ -9,29 +9,23 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 public class CreateAccountController {
-
     private User user;
 
-    private ListView<Account> accountList;
-    @FXML
-    private PasswordField pinField;
+    @FXML private PasswordField pinField;
+    @FXML private PasswordField pinConfirmField;
 
-    @FXML
-    private PasswordField pinConfirmField;
+
     public void setUser(User user) {
         this.user = user;
     }
 
 
     public void create() {
-
-
         String pin = pinField.getText();
         String pinConfirm = pinConfirmField.getText();
 
         if ( pin.equals(pinConfirm) ) {
-
-            accountList.getItems().add(new Account(Integer.parseInt(pin), 0));
+            user.addAccount(new Account(Integer.parseInt(pin), 0));
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Confirmation Dialog");
@@ -54,9 +48,5 @@ public class CreateAccountController {
         if ( keyEvent.getCode().equals(KeyCode.ENTER) ) {
             create();
         }
-    }
-
-    public void setAccountList(ListView<Account> accountList) {
-        this.accountList = accountList;
     }
 }

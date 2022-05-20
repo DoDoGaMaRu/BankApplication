@@ -1,13 +1,11 @@
 package com.gui;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 
 public class AccountOptionController {
     private Scene prevScene;
@@ -29,7 +27,7 @@ public class AccountOptionController {
         this.prevScene = prevScene;
     }
 
-    public void back() throws IOException {
+    public void back() {
         Scene thisScene = accNum.getScene();
         Stage stage = (Stage) thisScene.getWindow();
 
@@ -37,7 +35,7 @@ public class AccountOptionController {
         stage.setScene(prevScene);
     }
 
-    public void withdraw(ActionEvent actionEvent) {
+    public void withdraw() {
         if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
             acc.withdraw(Integer.parseInt(amount.getText()));
             messageLabel.setText("Withdraw Succeed!");
@@ -48,7 +46,7 @@ public class AccountOptionController {
         }
     }
 
-    public void deposit(ActionEvent actionEvent) {
+    public void deposit() {
         if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
             acc.deposit(Integer.parseInt(amount.getText()));
             messageLabel.setText("Deposit Succeed!");
