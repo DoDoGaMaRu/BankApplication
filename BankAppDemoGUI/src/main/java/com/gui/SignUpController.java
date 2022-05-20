@@ -20,12 +20,12 @@ public class SignUpController {
     private PasswordField pw;
 
     @FXML
-    private PasswordField pwconfirm;
+    private PasswordField pwConfirm;
 
     public void signUp() {
 
         String password = pw.getText();
-        String passwordConfirm = pwconfirm.getText();
+        String passwordConfirm = pwConfirm.getText();
 
         if( password.equals(passwordConfirm) ) {
 
@@ -54,7 +54,7 @@ public class SignUpController {
     }
 
     public void closeStage() {
-        Stage stage = (Stage) pwconfirm.getScene().getWindow();
+        Stage stage = (Stage) pwConfirm.getScene().getWindow();
         stage.close();
     }
 }
