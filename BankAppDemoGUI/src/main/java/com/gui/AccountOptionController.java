@@ -18,6 +18,8 @@ public class AccountOptionController {
     @FXML private Label messageLabel;
     @FXML private TextField pwTextField;
 
+
+
     public void setAccount(Account acc) {
         this.acc = acc;
         accNum.setText(String.format("%d",acc.getAccountNumber()));
@@ -28,18 +30,12 @@ public class AccountOptionController {
         this.prevScene = prevScene;
     }
 
-    public void back() {
-        Scene thisScene = accNum.getScene();
-        Stage stage = (Stage) thisScene.getWindow();
 
-        stage.setTitle("SELECT");
-        stage.setScene(prevScene);
-    }
 
-    public void withdraw() {
+    public void deposit() {
         if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
-            acc.withdraw(Integer.parseInt(amount.getText()));
-            messageLabel.setText("Withdraw Succeed!");
+            acc.deposit(Integer.parseInt(amount.getText()));
+            messageLabel.setText("Deposit Succeed!");
             balance.setText(String.format("%d",acc.getBalance()));
         }
         else {
@@ -47,10 +43,10 @@ public class AccountOptionController {
         }
     }
 
-    public void deposit() {
+    public void withdraw() {
         if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
-            acc.deposit(Integer.parseInt(amount.getText()));
-            messageLabel.setText("Deposit Succeed!");
+            acc.withdraw(Integer.parseInt(amount.getText()));
+            messageLabel.setText("Withdraw Succeed!");
             balance.setText(String.format("%d",acc.getBalance()));
         }
         else {
@@ -68,7 +64,7 @@ public class AccountOptionController {
                 TransferMenuController con = loader.getController();
                 con.setAmount(Integer.parseInt(amount.getText()));
                 con.setAccount(acc);
-                stage.setTitle("TranferMenu");
+                stage.setTitle("TransferMenu");
                 stage.setScene(scene);
                 stage.show();
 
@@ -81,4 +77,13 @@ public class AccountOptionController {
         }
     }
 
+
+
+    public void back() {
+        Scene thisScene = accNum.getScene();
+        Stage stage = (Stage) thisScene.getWindow();
+
+        stage.setTitle("SELECT");
+        stage.setScene(prevScene);
+    }
 }
