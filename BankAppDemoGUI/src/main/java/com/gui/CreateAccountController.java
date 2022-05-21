@@ -33,9 +33,10 @@ public class CreateAccountController {
             alert.setContentText("Your account is created!");
             alert.showAndWait();
 
-            ((Stage) pinConfirmField.getScene().getWindow()).close();
+            ((Stage)pinField.getScene().getWindow()).close();
 
-        } else {
+        }
+        else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Confirmation Dialog");
             alert.setHeaderText("CreateAccountFailed");

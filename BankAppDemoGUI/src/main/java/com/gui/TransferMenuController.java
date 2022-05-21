@@ -7,7 +7,18 @@ import javafx.stage.Stage;
 public class TransferMenuController {
     private int amount;
     private Account account;
+
     @FXML private TextField enteredAccNum;
+
+
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public void setAccount(Account acc) {
+        this.account = acc;
+    }
 
 
 
@@ -18,13 +29,4 @@ public class TransferMenuController {
 
         ((Stage)enteredAccNum.getScene().getWindow()).close();
     }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
-    public void setAccount(Account acc) {
-        this.account = acc;
-    }
-
 }

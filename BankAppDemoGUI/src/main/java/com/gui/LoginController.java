@@ -18,7 +18,6 @@ public class LoginController {
     @FXML private Label errorLabel;
 
 
-    @FXML
     public void login() {
         String id = idTextField.getText();
         String pw = pwTextField.getText();
@@ -47,6 +46,14 @@ public class LoginController {
         }
     }
 
+    public void enterLogin(KeyEvent keyEvent) {
+        if ( keyEvent.getCode().equals(KeyCode.ENTER) ) {
+            login();
+        }
+    }
+
+
+
     public void signUp() {
         Stage signUpStage = new Stage();
 
@@ -58,19 +65,16 @@ public class LoginController {
             signUpStage.setScene(scene);
             signUpStage.initModality(Modality.APPLICATION_MODAL);
             signUpStage.show();
-        } catch(Exception e) {
+        }
+        catch(Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void closeStage() {
-        Stage stage = (Stage) idTextField.getScene().getWindow();
-        stage.close();
-    }
 
-    public void enterLogin(KeyEvent keyEvent) {
-        if ( keyEvent.getCode().equals(KeyCode.ENTER) ) {
-            login();
-        }
+
+    public void closeStage() {
+        Stage stage = (Stage)idTextField.getScene().getWindow();
+        stage.close();
     }
 }
