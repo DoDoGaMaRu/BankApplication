@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="310.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.AccountOptionController">
+<AnchorPane prefHeight="310.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.AccountOptionController">
    <children>
-      <Button layoutX="18.0" layoutY="266.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: invisable;" text="&lt; Back">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
       <Label layoutX="155.0" layoutY="51.0" prefHeight="22.0" prefWidth="139.0" text="Account number : ">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <Label layoutX="221.0" layoutY="81.0" prefHeight="19.0" prefWidth="69.0" text="Balance :">
          <font>
             <Font size="17.0" />
          </font>
@@ -26,17 +19,27 @@
             <Font size="17.0" />
          </font>
       </Label>
+      <Label layoutX="221.0" layoutY="81.0" prefHeight="19.0" prefWidth="69.0" text="Balance :">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
       <Label fx:id="balance" alignment="CENTER_RIGHT" layoutX="299.0" layoutY="81.0" prefHeight="20.0" prefWidth="119.0">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="422.0" layoutY="160.0" text="₩">
+      <Label layoutX="423.0" layoutY="81.0" text="₩">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="423.0" layoutY="81.0" text="₩">
+      <Label alignment="CENTER_RIGHT" layoutX="160.0" layoutY="112.0" prefHeight="21.0" prefWidth="139.0" text="Account Pin">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="422.0" layoutY="160.0" text="₩">
          <font>
             <Font size="17.0" />
          </font>
@@ -67,10 +70,10 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Label alignment="CENTER_RIGHT" layoutX="160.0" layoutY="112.0" prefHeight="21.0" prefWidth="139.0" text="Account Pin">
+      <Button layoutX="18.0" layoutY="266.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: invisable;" text="&lt; Back">
          <font>
-            <Font size="17.0" />
+            <Font size="15.0" />
          </font>
-      </Label>
+      </Button>
    </children>
 </AnchorPane>
