@@ -1,6 +1,7 @@
 package com.gui;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -51,6 +52,29 @@ public class AccountOptionController {
             acc.deposit(Integer.parseInt(amount.getText()));
             messageLabel.setText("Deposit Succeed!");
             balance.setText(String.format("%d",acc.getBalance()));
+        }
+        else {
+            messageLabel.setText("Wrong Pin!");
+        }
+    }
+
+    public void transfer() {
+        if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
+            Stage stage = new Stage();
+            try{
+                FXMLLoader loader = new FXMLLoader(BankApplication.class.getResource("transferMenu.fxml"));
+                Scene scene = new Scene(loader.load());
+
+                TransferMenuController con = loader.getController();
+                con.setAmount(Integer.parseInt(amount.getText()));
+                con.setAccount(acc);
+                stage.setTitle("TranferMenu");
+                stage.setScene(scene);
+                stage.show();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         else {
             messageLabel.setText("Wrong Pin!");

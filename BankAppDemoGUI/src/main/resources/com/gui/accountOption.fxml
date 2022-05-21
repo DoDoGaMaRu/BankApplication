@@ -65,7 +65,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="352.0" layoutY="203.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: gray;" text="Transfer" textFill="WHITE">
+      <Button layoutX="352.0" layoutY="203.0" mnemonicParsing="false" onAction="#transfer" prefHeight="30.0" prefWidth="86.0" style="-fx-background-color: gray;" text="Transfer" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
