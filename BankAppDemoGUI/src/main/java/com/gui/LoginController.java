@@ -10,19 +10,37 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class LoginController {
-    private static User user = new User("홍길동", "admin", "1234");
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.TreeMap;
 
+public class LoginController {
     @FXML private TextField idTextField;
     @FXML private TextField pwTextField;
     @FXML private Label errorLabel;
 
 
-    public void login() {
+    private User findUser(String id) throws IOException, ClassNotFoundException {
+        String filePath = "users";
+        File accFile = new File(filePath);
+        FileInputStream fis = new FileInputStream(accFile);
+        ObjectInputStream ois = new ObjectInputStream(fis);
+
+        TreeMap<String, User> users = (TreeMap<String, User>) ois.readObject();
+
+        return users.get(id);
+    }
+
+
+    public void login() throws IOException, ClassNotFoundException {
         String id = idTextField.getText();
+        User crntUser = findUser(id);
+
         String pw = pwTextField.getText();
 
-        if (id.equals(user.getId()) && pw.equals(user.getPwd())) {
+        if (crntUser.getPwd().equals(pw)) {
             closeStage();
 
             Stage primaryStage = new Stage();
@@ -31,7 +49,7 @@ public class LoginController {
                 Scene scene = new Scene(loader.load());
 
                 SelectAccountController selAccCon = loader.getController();
-                selAccCon.setUser(user);
+                selAccCon.setUser(crntUser);
 
                 primaryStage.setTitle("SELECT");
                 primaryStage.setScene(scene);
@@ -46,7 +64,7 @@ public class LoginController {
         }
     }
 
-    public void enterLogin(KeyEvent keyEvent) {
+    public void enterLogin(KeyEvent keyEvent) throws IOException, ClassNotFoundException {
         if ( keyEvent.getCode().equals(KeyCode.ENTER) ) {
             login();
         }

@@ -3,7 +3,7 @@ package com.gui;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class User implements Serializable {
+public class User implements Comparable<User>, Serializable {
     private String name;
     private String id;
     private String pwd;
@@ -42,5 +42,10 @@ public class User implements Serializable {
 
     public void addAccounts(int accNum) {
         accounts.add(accNum);
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return id.compareTo(o.id);
     }
 }
