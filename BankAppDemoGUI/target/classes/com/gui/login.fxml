@@ -10,6 +10,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.LoginController">
    <children>
+      <Label alignment="CENTER" layoutX="151.0" layoutY="23.0" prefHeight="48.0" prefWidth="204.0" text="BANK APP LOGIN ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorLabel" contentDisplay="CENTER" layoutX="67.0" layoutY="252.0" prefHeight="19.0" prefWidth="241.0" textAlignment="CENTER" textFill="RED" />
+      <Line endX="380.0" endY="7.62939453125E-6" layoutX="100.0" layoutY="79.0" startX="-100.0" />
+      <Line endX="380.0" endY="7.62939453125E-6" layoutX="100.0" layoutY="84.0" startX="-100.0" />
       <TextField fx:id="idTextField" layoutX="64.0" layoutY="135.0" onKeyPressed="#enterLogin" prefHeight="41.0" prefWidth="241.0" promptText="ID" />
       <PasswordField fx:id="pwTextField" layoutX="64.0" layoutY="198.0" onKeyPressed="#enterLogin" prefHeight="41.0" prefWidth="241.0" promptText="P/W" />
       <Button fx:id="loginButton" layoutX="343.0" layoutY="135.0" mnemonicParsing="false" onAction="#login" prefHeight="63.0" prefWidth="89.0" style="-fx-background-color: gray;" text="Login" textFill="WHITE">
@@ -17,18 +25,10 @@
             <Font size="17.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="151.0" layoutY="23.0" prefHeight="48.0" prefWidth="204.0" text="BANK APP LOGIN ">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="errorLabel" contentDisplay="CENTER" layoutX="67.0" layoutY="221.0" prefHeight="19.0" prefWidth="371.0" textAlignment="CENTER" textFill="RED" />
       <Button layoutX="343.0" layoutY="208.0" mnemonicParsing="false" onAction="#signUp" prefHeight="23.0" prefWidth="89.0" style="-fx-background-color: gray;" text="Sign Up" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Line endX="380.0" endY="7.62939453125E-6" layoutX="100.0" layoutY="79.0" startX="-100.0" />
-      <Line endX="380.0" endY="7.62939453125E-6" layoutX="100.0" layoutY="84.0" startX="-100.0" />
    </children>
 </AnchorPane>

@@ -9,21 +9,19 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 public class SignUpController {
+    @FXML private TextField name;
+    @FXML private TextField id;
+    @FXML private PasswordField pw;
+    @FXML private PasswordField pwConfirm;
 
-    @FXML
-    private TextField name;
 
-    @FXML
-    private TextField id;
-
-    @FXML
-    private PasswordField pw;
-
-    @FXML
-    private PasswordField pwConfirm;
+    public void enterSignUp(KeyEvent keyEvent){
+        if ( keyEvent.getCode().equals(KeyCode.ENTER) ) {
+            signUp();
+        }
+    }
 
     public void signUp() {
-
         String password = pw.getText();
         String passwordConfirm = pwConfirm.getText();
 
@@ -46,12 +44,6 @@ public class SignUpController {
             alert.setHeaderText("SignUpFailed");
             alert.setContentText("password and confirm password is different!");
             alert.showAndWait();
-        }
-    }
-
-    public void enterSignUp(KeyEvent keyEvent){
-        if ( keyEvent.getCode().equals(KeyCode.ENTER) ) {
-            signUp();
         }
     }
 

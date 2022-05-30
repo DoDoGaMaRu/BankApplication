@@ -25,7 +25,7 @@ public class CreateAccountController {
         String pinConfirm = pinConfirmField.getText();
 
         if ( pin.equals(pinConfirm) ) {
-            user.addAccount(new Account(Integer.parseInt(pin), 0));
+            //user.addAccount(new Account(Integer.parseInt(pin), 0));
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Confirmation Dialog");
@@ -33,9 +33,10 @@ public class CreateAccountController {
             alert.setContentText("Your account is created!");
             alert.showAndWait();
 
-            ((Stage) pinConfirmField.getScene().getWindow()).close();
+            ((Stage)pinField.getScene().getWindow()).close();
 
-        } else {
+        }
+        else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Confirmation Dialog");
             alert.setHeaderText("CreateAccountFailed");

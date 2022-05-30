@@ -25,26 +25,12 @@ public class SelectAccountController {
     }
 
     public void refreshAccList() {
-        accountList.getItems().clear();
+        /*accountList.getItems().clear();
         ArrayList<Account> accounts = user.getAccounts();
 
         for(Account acc : accounts) {
             accountList.getItems().add(acc);
-        }
-    }
-
-
-
-    public void logout() throws IOException {
-        Stage stage = (Stage) userName.getScene().getWindow();
-        stage.close();
-
-        FXMLLoader fxmlLoader = new FXMLLoader(BankApplication.class.getResource("login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-
-        stage.setTitle("BANK APP");
-        stage.setScene(scene);
-        stage.show();
+        }*/
     }
 
 
@@ -64,8 +50,6 @@ public class SelectAccountController {
         createAccStage.show();
     }
 
-
-
     public void select() throws IOException {
         Scene thisScene = userName.getScene();
         Stage stage = (Stage) thisScene.getWindow();
@@ -80,5 +64,17 @@ public class SelectAccountController {
 
         stage.setTitle("ACCOUNT_OPTION");
         stage.setScene(scene);
+    }
+
+    public void logout() throws IOException {
+        Stage stage = (Stage) userName.getScene().getWindow();
+        stage.close();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(BankApplication.class.getResource("login.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+
+        stage.setTitle("BANK APP");
+        stage.setScene(scene);
+        stage.show();
     }
 }
