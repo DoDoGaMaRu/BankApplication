@@ -26,9 +26,9 @@ public class SelectAccountController {
 
     public void refreshAccList() {
         /*accountList.getItems().clear();
-        ArrayList<Account> accounts = user.getAccounts();
+        ArrayList<Account> users = user.getAccounts();
 
-        for(Account acc : accounts) {
+        for(Account acc : users) {
             accountList.getItems().add(acc);
         }*/
     }
