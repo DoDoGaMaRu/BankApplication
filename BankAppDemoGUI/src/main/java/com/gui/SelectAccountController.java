@@ -25,12 +25,12 @@ public class SelectAccountController {
     }
 
     public void refreshAccList() {
-        accountList.getItems().clear();
+        /*accountList.getItems().clear();
         ArrayList<Account> accounts = user.getAccounts();
 
         for(Account acc : accounts) {
             accountList.getItems().add(acc);
-        }
+        }*/
     }
 
 

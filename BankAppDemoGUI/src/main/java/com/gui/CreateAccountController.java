@@ -25,7 +25,7 @@ public class CreateAccountController {
         String pinConfirm = pinConfirmField.getText();
 
         if ( pin.equals(pinConfirm) ) {
-            user.addAccount(new Account(Integer.parseInt(pin), 0));
+            //user.addAccount(new Account(Integer.parseInt(pin), 0));
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Confirmation Dialog");

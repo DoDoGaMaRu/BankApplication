@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a68ab6e5-184f-4f1a-8f6f-cee42e1a7a90" name="Changes" comment="" />
+    <list default="true" id="a68ab6e5-184f-4f1a-8f6f-cee42e1a7a90" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/AccountOptionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/AccountOptionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/CreateAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/CreateAccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/SelectAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/SelectAccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/TransferMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/TransferMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/createAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/createAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/selectAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/selectAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/signUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/signUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/signUpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/transferMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/BankAppDemoGUI/target/classes/com/gui/transferMenu.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,13 +30,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/hodu42/Desktop/IntelliJ_workspace/프로그래밍응용/BankApplication/BankAppDemoGUI"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/BankAppDemoGUI" />
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -33,7 +44,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653030603634</updated>
+      <workItem from="1653887164685" duration="55000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

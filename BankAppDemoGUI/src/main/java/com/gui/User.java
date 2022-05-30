@@ -1,19 +1,18 @@
 package com.gui;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class User {
+public class User implements Serializable {
     private String name;
     private String id;
     private String pwd;
-    private ArrayList<Account> accounts;
+    private ArrayList<Integer> accounts;
 
     public User(String name, String id, String pwd) {
         this.name = name;
         this.id = id;
         this.pwd = pwd;
-        accounts = new ArrayList<>();
-        accounts.add(new Account(11,5000));
     }
 
     public String getId() {
@@ -28,11 +27,20 @@ public class User {
         return name;
     }
 
-    public ArrayList<Account> getAccounts(){
-        return accounts;
+
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void addAccount(Account newAccount) {
-        accounts.add(newAccount);
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
+
+    public void addAccounts(int accNum) {
+        accounts.add(accNum);
     }
 }
