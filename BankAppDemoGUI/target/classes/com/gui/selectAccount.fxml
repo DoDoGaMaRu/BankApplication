@@ -12,21 +12,21 @@
          <font>
             <Font size="15.0" />
          </font></Label>
-      <ListView fx:id="accountList" layoutX="38.0" layoutY="95.0" prefHeight="137.0" prefWidth="403.0" />
-      <Label layoutX="38.0" layoutY="66.0" prefHeight="22.0" prefWidth="107.0" text="Select Account">
-         <font>
-            <Font size="15.0" />
-         </font></Label>
-      <Button layoutX="38.0" layoutY="251.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: gray;" text="Logout" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
       <Label fx:id="userName" layoutX="117.0" layoutY="25.0" prefHeight="22.0" prefWidth="79.0" text="UN">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
+      <Label layoutX="38.0" layoutY="66.0" prefHeight="22.0" prefWidth="107.0" text="Select Account">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <ListView fx:id="accountList" layoutX="38.0" layoutY="95.0" prefHeight="137.0" prefWidth="403.0" />
+      <Button layoutX="38.0" layoutY="251.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: gray;" text="Logout" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
       <Button layoutX="249.0" layoutY="251.0" mnemonicParsing="false" onAction="#createAccount" style="-fx-background-color: gray;" text="Create Account" textFill="WHITE">
          <font>
             <Font size="15.0" />
