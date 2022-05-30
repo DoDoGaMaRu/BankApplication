@@ -1,27 +1,30 @@
 package com.gui;
 
 import java.io.*;
+import java.util.TreeMap;
 
 public class Test {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        String filePath = "hello.txt";
+        String filePath = "users";
         File accFile = new File(filePath);
 
         FileOutputStream fos = new FileOutputStream(accFile);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-        oos.writeObject(new User("홍길동", "1234", "1234"));
+        TreeMap<Integer, User> abc = new TreeMap<>();
+        oos.writeObject(abc);
         oos.flush();
         oos.close();
 
 /*
         FileInputStream fio = new FileInputStream(accFile);
-        BufferedInputStream bis = new BufferedInputStream(fio);
-        ObjectInputStream ois = new ObjectInputStream(bis);
-
+        ObjectInputStream ois = new ObjectInputStream(fio);
+        ois.readObject();
         User acc = (User)ois.readObject();
 
         acc.setName("백대환");
+
+        System.out.print(acc.getName());
 */
     }
 

@@ -1,6 +1,8 @@
 package com.gui;
 
-public class Account {
+import java.io.Serializable;
+
+public class Account implements Serializable {
     private static int staticAccNum;
     private int accountNumber;
     private int pin;
