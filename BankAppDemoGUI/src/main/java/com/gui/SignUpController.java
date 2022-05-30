@@ -29,6 +29,8 @@ public class SignUpController {
 
         if( password.equals(passwordConfirm) ) {
 
+
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Confirmation Dialog");
             alert.setHeaderText("SignUpSuccess");
