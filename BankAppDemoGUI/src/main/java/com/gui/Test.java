@@ -11,8 +11,8 @@ public class Test {
         FileOutputStream fos = new FileOutputStream(accFile);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-        TreeMap<Integer, User> abc = new TreeMap<>();
-        oos.writeObject(abc);
+        oos.writeObject(new User("백대환", "1234", "1234"));
+        oos.writeObject(new User("시발", "4312", "4312"));
         oos.flush();
         oos.close();
 
