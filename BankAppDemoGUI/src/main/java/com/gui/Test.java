@@ -5,16 +5,6 @@ import java.util.TreeMap;
 
 public class Test {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        String filePath = "accounts";
-        File accFile = new File(filePath);
-
-        FileOutputStream fos = new FileOutputStream(accFile);
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-
-        TreeMap<Integer, Account> accounts = new TreeMap<>();
-        oos.writeObject(accounts);
-        oos.flush();
-        oos.close();
 
 /*
         FileInputStream fio = new FileInputStream(accFile);

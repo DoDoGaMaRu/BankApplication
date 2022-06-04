@@ -13,6 +13,7 @@ public class User implements Comparable<User>, Serializable {
         this.name = name;
         this.id = id;
         this.pwd = pwd;
+        this.accounts = new ArrayList<>();
     }
 
     public String getId() {

@@ -1,7 +1,6 @@
 package com.gui;
 
 public interface IAccount {
-
     public int getAccountNumber();
 
     public int getBalance();

@@ -15,9 +15,11 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
+import static com.gui.SaveFile.saveUser;
+
 public class SelectAccountController {
     private User user;
-    private ArrayList<Account> userAccounts;
+    private ArrayList<Account> userAccounts = new ArrayList<>();
 
     @FXML private Label userName;
     @FXML private ListView<Account> accountList;
@@ -30,16 +32,19 @@ public class SelectAccountController {
     }
 
     public void refreshAccList() throws IOException, ClassNotFoundException {
+        accountList.getItems().clear();
+
         ArrayList<Integer> userAccountsNum = user.getAccounts();
+
+        userAccounts = new ArrayList<>();
         for(Integer accNum : userAccountsNum) {
             userAccounts.add(findAccount(accNum));
         }
 
-        accountList.getItems().clear();
-
         for(Account acc : userAccounts) {
             accountList.getItems().add(acc);
         }
+
     }
 
     private Account findAccount(int accountNumber) throws IOException, ClassNotFoundException {
@@ -84,7 +89,8 @@ public class SelectAccountController {
         stage.setScene(scene);
     }
 
-    public void logout() throws IOException {
+    public void logout() throws IOException, ClassNotFoundException {
+        saveUser(user);
         Stage stage = (Stage) userName.getScene().getWindow();
         stage.close();
 
