@@ -8,28 +8,37 @@ public class AccountsFileManager {
 
     public static void addAccount(Account acc) throws IOException, ClassNotFoundException {
         File accFile = new File(filePath);
-        FileInputStream fis = new FileInputStream(accFile);
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        TreeMap<Integer, Account> accounts = (TreeMap<Integer, Account>) ois.readObject();
+        TreeMap<Integer, Account> accounts = getTreeMap(accFile);
 
         accounts.put(acc.getAccountNumber(), acc);
-
-        FileOutputStream fos = new FileOutputStream(accFile);
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-
-        oos.writeObject(accounts);
-        oos.flush();
-        oos.close();
+        writeFile(accFile, accounts);
     }
 
-    public static void saveAccount(Account account) throws IOException, ClassNotFoundException {
+    public static Account findAccount(int accNum) throws IOException, ClassNotFoundException {
         File accFile = new File(filePath);
+        return (Account) getTreeMap(accFile).get(accNum);
+    }
+
+    public static void saveAccount(Account acc) throws IOException, ClassNotFoundException {
+        File accFile = new File(filePath);
+        TreeMap<Integer, Account> accounts = getTreeMap(accFile);
+
+        accounts.replace(acc.getAccountNumber(), acc);
+        writeFile(accFile, accounts);
+    }
+
+
+
+    private static TreeMap getTreeMap(File accFile) throws IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream(accFile);
         ObjectInputStream ois = new ObjectInputStream(fis);
-
         TreeMap<Integer, Account> accounts = (TreeMap<Integer, Account>) ois.readObject();
-        accounts.replace(account.getAccountNumber(), account);
 
+        Account.setStaticAccNum(accounts.size());
+        return accounts;
+    }
+
+    private static void writeFile(File accFile, TreeMap accounts) throws IOException {
         FileOutputStream fos = new FileOutputStream(accFile);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
 
@@ -37,5 +46,4 @@ public class AccountsFileManager {
         oos.flush();
         oos.close();
     }
-
 }

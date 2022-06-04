@@ -3,7 +3,8 @@ package com.gui;
 import java.io.Serializable;
 
 public class Account implements IAccount, Serializable {
-    private static int staticAccNum;
+    private static int staticAccNum = 0;
+
     private int accountNumber;
     private int pin;
     private int balance;
@@ -13,12 +14,15 @@ public class Account implements IAccount, Serializable {
         this.pin = pin;
         balance = amount;
     }
+
+
+    public static void setStaticAccNum(int accNum) { staticAccNum = accNum; }
+
+
     @Override
     public int getAccountNumber() {
         return accountNumber;
     }
-
-    public void setStaticAccNum(int accNum) { staticAccNum = accNum; }
 
     @Override
     public int getBalance() {
