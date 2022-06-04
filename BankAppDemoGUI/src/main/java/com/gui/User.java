@@ -44,6 +44,10 @@ public class User implements Comparable<User>, Serializable {
         accounts.add(accNum);
     }
 
+    public ArrayList<Integer> getAccounts() {
+        return accounts;
+    }
+
     @Override
     public int compareTo(User o) {
         return id.compareTo(o.id);
