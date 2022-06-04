@@ -43,12 +43,12 @@ public class CreateAccountController {
             AccountsFileManager.addAccount(acc = new MinusAccount(Integer.parseInt(pinField.getText()), 0, Integer.parseInt(creditLimit.getText())));
             AccountsFileManager.saveAccount(acc);
             user.addAccounts(acc.getAccountNumber());
-            SaveFile.saveUser(user);
+            UsersFileManager.saveUser(user);
         } else {
             AccountsFileManager.addAccount(acc = new Account(Integer.parseInt(pinField.getText()), 0));
             AccountsFileManager.saveAccount(acc);
             user.addAccounts(acc.getAccountNumber());
-            SaveFile.saveUser(user);
+            UsersFileManager.saveUser(user);
         }
         //user.addAccount(new Account(Integer.parseInt(pin), 0));
 
