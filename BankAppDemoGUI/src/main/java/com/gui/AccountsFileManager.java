@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.TreeMap;
 
 public class AccountsFileManager {
-    private static String filePath;
+    private static String filePath = "accounts";
 
     public static void addAccount(Account acc) throws IOException, ClassNotFoundException {
         File accFile = new File(filePath);
@@ -29,7 +29,7 @@ public class AccountsFileManager {
 
 
 
-    private static TreeMap getTreeMap(File accFile) throws IOException, ClassNotFoundException {
+    private static TreeMap<Integer, Account> getTreeMap(File accFile) throws IOException, ClassNotFoundException {
         FileInputStream fis = new FileInputStream(accFile);
         ObjectInputStream ois = new ObjectInputStream(fis);
         TreeMap<Integer, Account> accounts = (TreeMap<Integer, Account>) ois.readObject();
@@ -38,7 +38,7 @@ public class AccountsFileManager {
         return accounts;
     }
 
-    private static void writeFile(File accFile, TreeMap accounts) throws IOException {
+    private static void writeFile(File accFile, TreeMap<Integer, Account> accounts) throws IOException {
         FileOutputStream fos = new FileOutputStream(accFile);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
 
