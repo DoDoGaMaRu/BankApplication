@@ -6,6 +6,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
+import java.io.*;
 import java.util.TreeMap;
 
 public class CreateAccountController {
@@ -31,40 +32,46 @@ public class CreateAccountController {
     }
 
 
-    public void create() {
+    public void create() throws IOException, ClassNotFoundException {
         TreeMap<Integer, Account> accounts;
 
         String pin = pinField.getText();
         String pinConfirm = pinConfirmField.getText();
 
-        if ( pin.equals(pinConfirm) ) {
-            Account acc;
-            if (checkBox.isSelected() ) {
-                int limit = Integer.parseInt(creditLimit.getText());
-                acc = new MinusAccount(Integer.parseInt(pin), 0, limit);
-            } else {
-                acc = new Account(Integer.parseInt(pin), 0);
-            }
-            //user.addAccount(new Account(Integer.parseInt(pin), 0));
-
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Confirmation Dialog");
-            alert.setHeaderText("CreateAccountSuccess");
-            alert.setContentText("Your account is created!");
-            alert.showAndWait();
-
-            ((Stage)pinField.getScene().getWindow()).close();
+        if (checkBox.isSelected()) {
+            addAccount(new MinusAccount(Integer.parseInt(pinField.getText()), 0, Integer.parseInt(creditLimit.getText())));
+        } else {
+            addAccount(new Account(Integer.parseInt(pinField.getText()), 0));
         }
-        else {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Confirmation Dialog");
-            alert.setHeaderText("CreateAccountFailed");
-            alert.setContentText("pin and confirm pin is different!");
-            alert.showAndWait();
-        }
+        //user.addAccount(new Account(Integer.parseInt(pin), 0));
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Confirmation Dialog");
+        alert.setHeaderText("CreateAccountSuccess");
+        alert.setContentText("Your account is created!");
+        alert.showAndWait();
+
+        ((Stage) pinField.getScene().getWindow()).close();
     }
 
-    public void enterCreate(KeyEvent keyEvent){
+    private void addAccount(Account acc) throws IOException, ClassNotFoundException {
+        String filePath = "accounts";
+        File accFile = new File(filePath);
+        FileInputStream fis = new FileInputStream(accFile);
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        TreeMap<Integer, Account> accounts = (TreeMap<Integer, Account>) ois.readObject();
+
+        accounts.put(acc.getAccountNumber(), acc);
+
+        FileOutputStream fos = new FileOutputStream(accFile);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+        oos.writeObject(accounts);
+        oos.flush();
+        oos.close();
+    }
+
+    public void enterCreate(KeyEvent keyEvent) throws IOException, ClassNotFoundException {
         if ( keyEvent.getCode().equals(KeyCode.ENTER) ) {
             create();
         }

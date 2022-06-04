@@ -2,7 +2,7 @@ package com.gui;
 
 import java.io.Serializable;
 
-public class Account implements Serializable {
+public class Account implements IAccount, Serializable {
     private static int staticAccNum;
     private int accountNumber;
     private int pin;
@@ -13,31 +13,37 @@ public class Account implements Serializable {
         this.pin = pin;
         balance = amount;
     }
-
+    @Override
     public int getAccountNumber() {
         return accountNumber;
     }
 
+    @Override
     public int getBalance() {
         return balance;
     }
 
+    @Override
     public void deposit(int amount) {
         balance += amount;
     }
 
+    @Override
     public void withdraw(int amount) {
         balance -= amount;
     }
 
+    @Override
     public void transfer(int accNum, int amount) {
         balance -= amount;
     }
 
+    @Override
     public boolean validatePIN(int pin) {
         return (pin == this.pin) ? true : false;
     }
 
+    @Override
     public String toString() {
         return String.format("계좌번호 : %d\t잔액 : %d₩", accountNumber, balance);
     }
