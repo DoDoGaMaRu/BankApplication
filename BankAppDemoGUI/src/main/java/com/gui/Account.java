@@ -18,6 +18,8 @@ public class Account implements IAccount, Serializable {
         return accountNumber;
     }
 
+    public void setStaticAccNum(int accNum) { staticAccNum = accNum; }
+
     @Override
     public int getBalance() {
         return balance;

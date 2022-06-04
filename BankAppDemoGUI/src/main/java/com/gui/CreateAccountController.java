@@ -34,14 +34,21 @@ public class CreateAccountController {
 
     public void create() throws IOException, ClassNotFoundException {
         TreeMap<Integer, Account> accounts;
+        Account acc;
 
         String pin = pinField.getText();
         String pinConfirm = pinConfirmField.getText();
 
         if (checkBox.isSelected()) {
-            addAccount(new MinusAccount(Integer.parseInt(pinField.getText()), 0, Integer.parseInt(creditLimit.getText())));
+            AccountsFileManager.addAccount(acc = new MinusAccount(Integer.parseInt(pinField.getText()), 0, Integer.parseInt(creditLimit.getText())));
+            AccountsFileManager.saveAccount(acc);
+            user.addAccounts(acc.getAccountNumber());
+            SaveFile.saveUser(user);
         } else {
-            addAccount(new Account(Integer.parseInt(pinField.getText()), 0));
+            AccountsFileManager.addAccount(acc = new Account(Integer.parseInt(pinField.getText()), 0));
+            AccountsFileManager.saveAccount(acc);
+            user.addAccounts(acc.getAccountNumber());
+            SaveFile.saveUser(user);
         }
         //user.addAccount(new Account(Integer.parseInt(pin), 0));
 
@@ -54,22 +61,22 @@ public class CreateAccountController {
         ((Stage) pinField.getScene().getWindow()).close();
     }
 
-    private void addAccount(Account acc) throws IOException, ClassNotFoundException {
-        String filePath = "accounts";
-        File accFile = new File(filePath);
-        FileInputStream fis = new FileInputStream(accFile);
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        TreeMap<Integer, Account> accounts = (TreeMap<Integer, Account>) ois.readObject();
-
-        accounts.put(acc.getAccountNumber(), acc);
-
-        FileOutputStream fos = new FileOutputStream(accFile);
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-
-        oos.writeObject(accounts);
-        oos.flush();
-        oos.close();
-    }
+//    private void addAccount(Account acc) throws IOException, ClassNotFoundException {
+//        String filePath = "accounts";
+//        File accFile = new File(filePath);
+//        FileInputStream fis = new FileInputStream(accFile);
+//        ObjectInputStream ois = new ObjectInputStream(fis);
+//        TreeMap<Integer, Account> accounts = (TreeMap<Integer, Account>) ois.readObject();
+//
+//        accounts.put(acc.getAccountNumber(), acc);
+//
+//        FileOutputStream fos = new FileOutputStream(accFile);
+//        ObjectOutputStream oos = new ObjectOutputStream(fos);
+//
+//        oos.writeObject(accounts);
+//        oos.flush();
+//        oos.close();
+//    }
 
     public void enterCreate(KeyEvent keyEvent) throws IOException, ClassNotFoundException {
         if ( keyEvent.getCode().equals(KeyCode.ENTER) ) {
