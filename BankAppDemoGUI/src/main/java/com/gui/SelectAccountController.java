@@ -8,12 +8,8 @@ import javafx.scene.control.ListView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.util.ArrayList;
-import java.util.TreeMap;
 
 public class SelectAccountController {
     private User user;
@@ -36,24 +32,13 @@ public class SelectAccountController {
 
         userAccounts = new ArrayList<>();
         for(Integer accNum : userAccountsNum) {
-            userAccounts.add(findAccount(accNum));
+            userAccounts.add(AccountsFileManager.findAccount(accNum));
         }
 
         for(Account acc : userAccounts) {
             accountList.getItems().add(acc);
         }
 
-    }
-
-    private Account findAccount(int accountNumber) throws IOException, ClassNotFoundException {
-        String filePath = "accounts";
-        File accFile = new File(filePath);
-        FileInputStream fis = new FileInputStream(accFile);
-        ObjectInputStream ois = new ObjectInputStream(fis);
-
-        TreeMap<Integer, Account> accounts = (TreeMap<Integer, Account>) ois.readObject();
-
-        return accounts.get(accountNumber);
     }
 
     public void createAccount() throws IOException {
