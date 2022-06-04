@@ -50,7 +50,6 @@ public class CreateAccountController {
             user.addAccounts(acc.getAccountNumber());
             UsersFileManager.saveUser(user);
         }
-        //user.addAccount(new Account(Integer.parseInt(pin), 0));
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Confirmation Dialog");
@@ -60,23 +59,6 @@ public class CreateAccountController {
 
         ((Stage) pinField.getScene().getWindow()).close();
     }
-
-//    private void addAccount(Account acc) throws IOException, ClassNotFoundException {
-//        String filePath = "accounts";
-//        File accFile = new File(filePath);
-//        FileInputStream fis = new FileInputStream(accFile);
-//        ObjectInputStream ois = new ObjectInputStream(fis);
-//        TreeMap<Integer, Account> accounts = (TreeMap<Integer, Account>) ois.readObject();
-//
-//        accounts.put(acc.getAccountNumber(), acc);
-//
-//        FileOutputStream fos = new FileOutputStream(accFile);
-//        ObjectOutputStream oos = new ObjectOutputStream(fos);
-//
-//        oos.writeObject(accounts);
-//        oos.flush();
-//        oos.close();
-//    }
 
     public void enterCreate(KeyEvent keyEvent) throws IOException, ClassNotFoundException {
         if ( keyEvent.getCode().equals(KeyCode.ENTER) ) {
