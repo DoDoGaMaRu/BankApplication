@@ -39,9 +39,9 @@ public class CreateAccountController {
         String pinConfirm = pinConfirmField.getText();
 
         if (checkBox.isSelected()) {
-            addAccount(true);
+            addAccount(new MinusAccount(Integer.parseInt(pinField.getText()), 0, Integer.parseInt(creditLimit.getText())));
         } else {
-            addAccount(false);
+            addAccount(new Account(Integer.parseInt(pinField.getText()), 0));
         }
         //user.addAccount(new Account(Integer.parseInt(pin), 0));
 
@@ -54,18 +54,14 @@ public class CreateAccountController {
         ((Stage) pinField.getScene().getWindow()).close();
     }
 
-    private void addAccount(boolean isMinusAccount) throws IOException, ClassNotFoundException {
+    private void addAccount(Account acc) throws IOException, ClassNotFoundException {
         String filePath = "accounts";
         File accFile = new File(filePath);
         FileInputStream fis = new FileInputStream(accFile);
         ObjectInputStream ois = new ObjectInputStream(fis);
         TreeMap<Integer, Account> accounts = (TreeMap<Integer, Account>) ois.readObject();
 
-        if ( isMinusAccount ) {
-            accounts.put(Integer.parseInt(pinField.getText()), new Account(Integer.parseInt(pinField.getText()), 0));
-        } else {
-            accounts.put(Integer.parseInt(pinField.getText()), new MinusAccount(Integer.parseInt(pinField.getText()), 0, Integer.parseInt(creditLimit.getText())));
-        }
+        accounts.put(acc.getAccountNumber(), acc);
 
         FileOutputStream fos = new FileOutputStream(accFile);
         ObjectOutputStream oos = new ObjectOutputStream(fos);

@@ -5,14 +5,14 @@ import java.util.TreeMap;
 
 public class Test {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        String filePath = "users";
+        String filePath = "accounts";
         File accFile = new File(filePath);
 
         FileOutputStream fos = new FileOutputStream(accFile);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-        TreeMap<Integer, User> abc = new TreeMap<>();
-        oos.writeObject(abc);
+        TreeMap<Integer, Account> accounts = new TreeMap<>();
+        oos.writeObject(accounts);
         oos.flush();
         oos.close();
 
