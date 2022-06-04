@@ -9,7 +9,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.util.TreeMap;
 
 public class SignUpController {
     @FXML private TextField name;
@@ -29,9 +28,7 @@ public class SignUpController {
         String passwordConfirm = pwConfirm.getText();
 
         if( password.equals(passwordConfirm) ) {
-            addUser();
-
-
+            UsersFileManager.addUser(new User(name.getText(), id.getText(), pw.getText()));
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Confirmation Dialog");
@@ -51,22 +48,22 @@ public class SignUpController {
         }
     }
 
-    private void addUser() throws IOException, ClassNotFoundException {
-        String filePath = "users";
-        File accFile = new File(filePath);
-        FileInputStream fis = new FileInputStream(accFile);
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        TreeMap<String, User> users = (TreeMap<String, User>) ois.readObject();
-
-        users.put(id.getText(), new User(name.getText(), id.getText(), pw.getText()));
-
-        FileOutputStream fos = new FileOutputStream(accFile);
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-
-        oos.writeObject(users);
-        oos.flush();
-        oos.close();
-    }
+//    private void addUser() throws IOException, ClassNotFoundException {
+//        String filePath = "users";
+//        File accFile = new File(filePath);
+//        FileInputStream fis = new FileInputStream(accFile);
+//        ObjectInputStream ois = new ObjectInputStream(fis);
+//        TreeMap<String, User> users = (TreeMap<String, User>) ois.readObject();
+//
+//        users.put(id.getText(), new User(name.getText(), id.getText(), pw.getText()));
+//
+//        FileOutputStream fos = new FileOutputStream(accFile);
+//        ObjectOutputStream oos = new ObjectOutputStream(fos);
+//
+//        oos.writeObject(users);
+//        oos.flush();
+//        oos.close();
+//    }
 
     public void closeStage() {
         Stage stage = (Stage) pwConfirm.getScene().getWindow();
