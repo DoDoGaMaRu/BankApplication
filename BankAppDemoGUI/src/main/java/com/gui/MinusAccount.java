@@ -8,4 +8,9 @@ public class MinusAccount extends Account {
         super(pin, amount);
         this.creditLimit = creditLimit;
     }
+
+    @Override
+    public String toString() {
+        return String.format(super.toString() + "\t마이너스 계좌 한도 : %d₩", creditLimit);
+    }
 }

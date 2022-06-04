@@ -17,7 +17,7 @@ import java.util.TreeMap;
 
 public class SelectAccountController {
     private User user;
-    private ArrayList<Account> userAccounts;
+    private ArrayList<Account> userAccounts = new ArrayList<>();
 
     @FXML private Label userName;
     @FXML private ListView<Account> accountList;
@@ -30,16 +30,19 @@ public class SelectAccountController {
     }
 
     public void refreshAccList() throws IOException, ClassNotFoundException {
+        accountList.getItems().clear();
+
         ArrayList<Integer> userAccountsNum = user.getAccounts();
+
+        userAccounts = new ArrayList<>();
         for(Integer accNum : userAccountsNum) {
             userAccounts.add(findAccount(accNum));
         }
 
-        accountList.getItems().clear();
-
         for(Account acc : userAccounts) {
             accountList.getItems().add(acc);
         }
+
     }
 
     private Account findAccount(int accountNumber) throws IOException, ClassNotFoundException {
