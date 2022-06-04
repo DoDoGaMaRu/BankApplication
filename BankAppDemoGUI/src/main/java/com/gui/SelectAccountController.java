@@ -15,6 +15,8 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
+import static com.gui.SaveFile.saveUser;
+
 public class SelectAccountController {
     private User user;
     private ArrayList<Account> userAccounts = new ArrayList<>();
@@ -87,7 +89,8 @@ public class SelectAccountController {
         stage.setScene(scene);
     }
 
-    public void logout() throws IOException {
+    public void logout() throws IOException, ClassNotFoundException {
+        saveUser(user);
         Stage stage = (Stage) userName.getScene().getWindow();
         stage.close();
 

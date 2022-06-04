@@ -5,13 +5,13 @@ import java.util.TreeMap;
 
 public class FileCreator {
     public static void main(String[] args) throws Exception{
-        String filePath = "users";
+        String filePath = "accounts";
         File accFile = new File(filePath);
 
         FileOutputStream fos = new FileOutputStream(accFile);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-        TreeMap<String, User> abc = new TreeMap<>();
+        TreeMap<Integer, Account> abc = new TreeMap<>();
 
         oos.writeObject(abc);
         oos.flush();
