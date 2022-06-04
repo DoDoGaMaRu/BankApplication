@@ -9,10 +9,10 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class SelectAccountController {
     private User user;
+    private Account[] userAccounts;
 
     @FXML private Label userName;
     @FXML private ListView<Account> accountList;
@@ -26,9 +26,9 @@ public class SelectAccountController {
 
     public void refreshAccList() {
         /*accountList.getItems().clear();
-        ArrayList<Account> users = user.getAccounts();
+        ArrayList<Integer> users = user.getAccounts();
 
-        for(Account acc : users) {
+        for(Integer acc : users) {
             accountList.getItems().add(acc);
         }*/
     }
