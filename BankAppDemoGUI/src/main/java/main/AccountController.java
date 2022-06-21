@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 
@@ -35,9 +36,18 @@ public class AccountController {
 
     public void deposit() {
         if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
-            acc.deposit(Integer.parseInt(amount.getText()));
-            messageLabel.setText("Deposit Succeed!");
-            balance.setText(String.format("%d",acc.getBalance()));
+            Stage stage = new Stage();
+            try{
+                FXMLLoader loader = new FXMLLoader(BankApplication.class.getResource("depositMenu.fxml"));
+                Scene scene = new Scene(loader.load());
+                stage.setTitle("DepositMenu");
+                stage.setScene(scene);
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.show();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         else {
             messageLabel.setText("Wrong Pin!");
@@ -46,9 +56,20 @@ public class AccountController {
 
     public void withdraw() {
         if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
-            acc.withdraw(Integer.parseInt(amount.getText()));
-            messageLabel.setText("Withdraw Succeed!");
-            balance.setText(String.format("%d",acc.getBalance()));
+            Stage stage = new Stage();
+            try{
+                FXMLLoader loader = new FXMLLoader(BankApplication.class.getResource("withdrawMenu.fxml"));
+                Scene scene = new Scene(loader.load());
+
+                WithdrawMenuController con = loader.getController();
+                con.setAccount(acc);
+                stage.setTitle("WithdrawMenu");
+                stage.setScene(scene);
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         else {
             messageLabel.setText("Wrong Pin!");
@@ -59,7 +80,7 @@ public class AccountController {
         if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
             Stage stage = new Stage();
             try{
-                FXMLLoader loader = new FXMLLoader(BankApplication.class.getResource("transferMenu.fxml"));
+                FXMLLoader loader = new FXMLLoader(BankApplication.class.getResource("transferMenutmp.fxml"));
                 Scene scene = new Scene(loader.load());
 
                 TransferMenuController con = loader.getController();

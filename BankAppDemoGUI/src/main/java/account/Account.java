@@ -34,7 +34,10 @@ public class Account implements IAccount, Serializable {
     }
 
     @Override
-    public void withdraw(int amount) {
+    public void withdraw(int amount) throws Exception {
+        if (amount > balance) {
+            throw new Exception();
+        }
         balance -= amount;
     }
 
