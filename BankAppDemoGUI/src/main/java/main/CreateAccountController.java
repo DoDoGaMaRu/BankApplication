@@ -38,6 +38,7 @@ public class CreateAccountController {
 
 
     public void create() throws IOException, ClassNotFoundException {
+        AccountsFileManager.findAccount(0);
         TreeMap<Integer, Account> accounts;
         Account acc;
 
@@ -45,13 +46,15 @@ public class CreateAccountController {
         String pinConfirm = pinConfirmField.getText();
 
         if (checkBox.isSelected()) {
-            AccountsFileManager.addAccount(acc = new MinusAccount(Integer.parseInt(pinField.getText()), 0, Integer.parseInt(creditLimit.getText())));
-            AccountsFileManager.saveAccount(acc);
+            acc = new MinusAccount(Integer.parseInt(pinField.getText()), 0, Integer.parseInt(creditLimit.getText()));
+            AccountsFileManager.addAccount(acc);
+
             user.addAccounts(acc.getAccountNumber());
             UsersFileManager.saveUser(user);
         } else {
-            AccountsFileManager.addAccount(acc = new Account(Integer.parseInt(pinField.getText()), 0));
-            AccountsFileManager.saveAccount(acc);
+            acc = new Account(Integer.parseInt(pinField.getText()), 0);
+            AccountsFileManager.addAccount(acc);
+
             user.addAccounts(acc.getAccountNumber());
             UsersFileManager.saveUser(user);
         }
