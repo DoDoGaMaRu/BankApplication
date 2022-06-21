@@ -15,7 +15,6 @@ public class AccountController {
 
     @FXML private Label accNum;
     @FXML private Label balance;
-    @FXML private TextField amount;
     @FXML private Label messageLabel;
     @FXML private TextField pwTextField;
 
@@ -35,9 +34,19 @@ public class AccountController {
 
     public void deposit() {
         if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
-            acc.deposit(Integer.parseInt(amount.getText()));
-            messageLabel.setText("Deposit Succeed!");
-            balance.setText(String.format("%d",acc.getBalance()));
+            Stage stage = new Stage();
+            try{
+                FXMLLoader loader = new FXMLLoader(BankApplication.class.getResource("depositMenu.fxml"));
+                Scene scene = new Scene(loader.load());
+
+                DepositMenuController con = loader.getController();
+                con.setAccount(acc);
+                stage.setTitle("DepositMenu");
+                stage.setScene(scene);
+                stage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         else {
             messageLabel.setText("Wrong Pin!");
@@ -46,7 +55,6 @@ public class AccountController {
 
     public void withdraw() {
         if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
-            acc.withdraw(Integer.parseInt(amount.getText()));
             messageLabel.setText("Withdraw Succeed!");
             balance.setText(String.format("%d",acc.getBalance()));
         }
@@ -63,7 +71,6 @@ public class AccountController {
                 Scene scene = new Scene(loader.load());
 
                 TransferMenuController con = loader.getController();
-                con.setAmount(Integer.parseInt(amount.getText()));
                 con.setAccount(acc);
                 stage.setTitle("TransferMenu");
                 stage.setScene(scene);
