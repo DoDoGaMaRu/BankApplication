@@ -1,4 +1,6 @@
-package com.gui;
+package fileManager;
+
+import com.gui.User;
 
 import java.io.*;
 import java.util.TreeMap;

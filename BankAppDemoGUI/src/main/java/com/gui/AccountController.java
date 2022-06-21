@@ -1,5 +1,6 @@
 package com.gui;
 
+import account.Account;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -8,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
-public class AccountOptionController {
+public class AccountController {
     private Scene prevScene;
     private Account acc;
 
@@ -67,7 +68,6 @@ public class AccountOptionController {
                 stage.setTitle("TransferMenu");
                 stage.setScene(scene);
                 stage.show();
-
             } catch (Exception e) {
                 e.printStackTrace();
             }

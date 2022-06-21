@@ -1,5 +1,6 @@
 package com.gui;
 
+import account.Account;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;

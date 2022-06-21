@@ -1,5 +1,8 @@
 package com.gui;
 
+import account.Account;
+import fileManager.AccountsFileManager;
+import fileManager.UsersFileManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -64,7 +67,7 @@ public class SelectAccountController {
         FXMLLoader fxmlLoader = new FXMLLoader(BankApplication.class.getResource("accountOption.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
-        AccountOptionController accOptionCon = fxmlLoader.getController();
+        AccountController accOptionCon = fxmlLoader.getController();
         accOptionCon.setAccount(accountList.getSelectionModel().getSelectedItem());
         accOptionCon.setPrevScene(thisScene);
 

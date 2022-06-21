@@ -1,4 +1,4 @@
-package com.gui;
+package account;
 
 public class MinusAccount extends Account {
 

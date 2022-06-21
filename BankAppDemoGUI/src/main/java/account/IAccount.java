@@ -1,4 +1,4 @@
-package com.gui;
+package account;
 
 public interface IAccount {
     public int getAccountNumber();
