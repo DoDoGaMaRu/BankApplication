@@ -61,7 +61,7 @@ public class SelectAccountController {
         Stage stage = (Stage) thisScene.getWindow();
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(BankApplication.class.getResource("accountOption.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(BankApplication.class.getResource("selectOption.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
 
         AccountOptionController accOptionCon = fxmlLoader.getController();
