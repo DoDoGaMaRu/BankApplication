@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.TreeMap;
 
 public class AccountsFileManager {
-    private static String filePath = "accounts";
+    private final static String filePath = "accounts";
 
     public static void addAccount(Account acc) throws IOException, ClassNotFoundException {
         File accFile = new File(filePath);
