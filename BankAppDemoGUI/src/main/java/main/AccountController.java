@@ -40,11 +40,12 @@ public class AccountController {
             try{
                 FXMLLoader loader = new FXMLLoader(BankApplication.class.getResource("depositMenu.fxml"));
                 Scene scene = new Scene(loader.load());
+
+                DepositMenuController con = loader.getController();
+                con.setAccount(acc);
                 stage.setTitle("DepositMenu");
                 stage.setScene(scene);
-                stage.initModality(Modality.APPLICATION_MODAL);
                 stage.show();
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -84,7 +85,6 @@ public class AccountController {
                 Scene scene = new Scene(loader.load());
 
                 TransferMenuController con = loader.getController();
-                con.setAmount(Integer.parseInt(amount.getText()));
                 con.setAccount(acc);
                 stage.setTitle("TransferMenu");
                 stage.setScene(scene);
