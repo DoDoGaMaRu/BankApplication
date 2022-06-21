@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="310.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SelectAccountController">
+<AnchorPane prefHeight="310.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.SelectAccountController">
    <children>
       <Label layoutX="38.0" layoutY="25.0" prefHeight="22.0" prefWidth="79.0" text="Welcome!">
          <font>
