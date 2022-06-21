@@ -1,4 +1,4 @@
-package controllers;
+package main;
 
 import user.User;
 import fileManager.UsersFileManager;

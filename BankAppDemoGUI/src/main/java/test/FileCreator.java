@@ -7,7 +7,7 @@ import java.util.TreeMap;
 
 public class FileCreator {
     public static void main(String[] args) throws Exception{
-        String filePath = "users";
+        String filePath = "accounts";
         File accFile = new File(filePath);
 
         FileOutputStream fos = new FileOutputStream(accFile);

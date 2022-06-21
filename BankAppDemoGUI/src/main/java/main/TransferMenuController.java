@@ -1,4 +1,4 @@
-package controllers;
+package main;
 
 import account.Account;
 import javafx.fxml.FXML;
