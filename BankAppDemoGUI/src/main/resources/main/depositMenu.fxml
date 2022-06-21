@@ -13,12 +13,12 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="balance" alignment="CENTER_RIGHT" layoutX="170.0" layoutY="93.0" prefHeight="20.0" prefWidth="119.0">
+      <Label fx:id="balance" alignment="CENTER_RIGHT" layoutX="236.0" layoutY="93.0" prefHeight="20.0" prefWidth="132.0">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="294.0" layoutY="93.0" text="₩">
+      <Label layoutX="373.0" layoutY="93.0" text="₩">
          <font>
             <Font size="17.0" />
          </font>

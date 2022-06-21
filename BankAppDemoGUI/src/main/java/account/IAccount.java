@@ -9,7 +9,7 @@ public interface IAccount {
 
     public void withdraw(int amount) throws Exception;
 
-    public void transfer(int accNum, int amount);
+    public void transfer(Account target, int amount) throws Exception;
 
     public boolean validatePIN(int pin);
 

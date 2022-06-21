@@ -45,6 +45,7 @@ public class AccountController {
                 con.setAccount(acc);
                 stage.setTitle("DepositMenu");
                 stage.setScene(scene);
+                stage.initModality(Modality.APPLICATION_MODAL);
                 stage.show();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -81,13 +82,14 @@ public class AccountController {
         if ( acc.validatePIN(Integer.parseInt(pwTextField.getText())) ) {
             Stage stage = new Stage();
             try{
-                FXMLLoader loader = new FXMLLoader(BankApplication.class.getResource("transferMenutmp.fxml"));
+                FXMLLoader loader = new FXMLLoader(BankApplication.class.getResource("transferMenu.fxml"));
                 Scene scene = new Scene(loader.load());
 
                 TransferMenuController con = loader.getController();
                 con.setAccount(acc);
                 stage.setTitle("TransferMenu");
                 stage.setScene(scene);
+                stage.initModality(Modality.APPLICATION_MODAL);
                 stage.show();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -96,6 +98,10 @@ public class AccountController {
         else {
             messageLabel.setText("Wrong Pin!");
         }
+    }
+
+    public void refresh() {
+        balance.setText(String.format("%d",acc.getBalance()));
     }
 
 
