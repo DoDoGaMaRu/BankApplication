@@ -15,7 +15,6 @@ public class Account implements IAccount, Serializable {
         balance = amount;
     }
 
-
     public static void setStaticAccNum(int accNum) { staticAccNum = accNum; }
 
 

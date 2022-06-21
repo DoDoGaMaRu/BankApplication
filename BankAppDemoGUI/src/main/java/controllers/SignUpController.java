@@ -50,23 +50,6 @@ public class SignUpController {
         }
     }
 
-//    private void addUser() throws IOException, ClassNotFoundException {
-//        String filePath = "users";
-//        File accFile = new File(filePath);
-//        FileInputStream fis = new FileInputStream(accFile);
-//        ObjectInputStream ois = new ObjectInputStream(fis);
-//        TreeMap<String, User> users = (TreeMap<String, User>) ois.readObject();
-//
-//        users.put(id.getText(), new User(name.getText(), id.getText(), pw.getText()));
-//
-//        FileOutputStream fos = new FileOutputStream(accFile);
-//        ObjectOutputStream oos = new ObjectOutputStream(fos);
-//
-//        oos.writeObject(users);
-//        oos.flush();
-//        oos.close();
-//    }
-
     public void closeStage() {
         Stage stage = (Stage) pwConfirm.getScene().getWindow();
         stage.close();

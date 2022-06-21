@@ -20,17 +20,6 @@ public class LoginController {
     @FXML private Label errorLabel;
 
 
-//    private User findUser(String id) throws IOException, ClassNotFoundException {
-//        String filePath = "users";
-//        File accFile = new File(filePath);
-//        FileInputStream fis = new FileInputStream(accFile);
-//        ObjectInputStream ois = new ObjectInputStream(fis);
-//
-//        TreeMap<String, User> users = (TreeMap<String, User>) ois.readObject();
-//
-//        return users.get(id);
-//    }
-
 
     public void login() throws IOException, ClassNotFoundException {
         String id = idTextField.getText();
