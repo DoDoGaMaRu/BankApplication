@@ -7,7 +7,7 @@ public class Account implements IAccount, Serializable {
 
     private int accountNumber;
     private int pin;
-    private int balance;
+    protected int balance;
 
     public Account(int pin, int amount) {
         accountNumber = ++staticAccNum;
@@ -42,8 +42,9 @@ public class Account implements IAccount, Serializable {
     }
 
     @Override
-    public void transfer(int accNum, int amount) {
-        balance -= amount;
+    public void transfer(Account target, int amount) throws Exception {
+        target.deposit(amount);
+        withdraw(amount);
     }
 
     @Override

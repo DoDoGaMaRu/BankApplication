@@ -26,15 +26,16 @@ public class WithdrawMenuController {
         balance.setText(Integer.toString(account.getBalance()));
     }
 
-    public void withdraw() throws IOException, ClassNotFoundException {
+    public void withdraw() {
         amount = Integer.parseInt(withdrawAmount.getText());
         try {
             account.withdraw(amount);
             messageLabel.setText("Withdraw completed!");
             AccountsFileManager.saveAccount(account);
-            ((Stage)withdrawAmount.getScene().getWindow()).close();
+
+            back();
         } catch (Exception e) {
-            messageLabel.setText("error : Not enough money");
+            messageLabel.setText("Error : Not enough money");
         }
     }
 

@@ -6,19 +6,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="310.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.AccountController">
+<AnchorPane prefHeight="310.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.WithdrawMenuController">
    <children>
       <Label layoutX="100.0" layoutY="93.0" prefHeight="19.0" prefWidth="69.0" text="Balance :">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="balance" alignment="CENTER_RIGHT" layoutX="170.0" layoutY="93.0" prefHeight="20.0" prefWidth="119.0">
+      <Label fx:id="balance" alignment="CENTER_RIGHT" layoutX="254.0" layoutY="93.0" prefHeight="20.0" prefWidth="132.0">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="294.0" layoutY="93.0" text="₩">
+      <Label layoutX="394.0" layoutY="93.0" text="₩">
          <font>
             <Font size="17.0" />
          </font>
@@ -28,7 +28,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button fx:id="withdrawButton" layoutX="302.0" layoutY="210.0" mnemonicParsing="false" onAction="#deposit" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: gray;" text="Withdraw" textFill="WHITE">
+      <Button fx:id="withdrawButton" layoutX="302.0" layoutY="210.0" mnemonicParsing="false" onAction="#withdraw" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: gray;" text="Withdraw" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
@@ -43,7 +43,7 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <TextField fx:id="depositAmount" layoutX="254.0" layoutY="134.0" prefHeight="22.0" prefWidth="132.0" promptText="Withdraw Amount" />
+      <TextField fx:id="withdrawAmount" layoutX="254.0" layoutY="134.0" prefHeight="22.0" prefWidth="132.0" promptText="Withdraw Amount" />
       <Label layoutX="394.0" layoutY="135.0" text="₩">
          <font>
             <Font size="17.0" />

@@ -25,6 +25,8 @@ public class DepositMenuController {
         acc.deposit(Integer.parseInt(depositAmount.getText()));
         balance.setText(String.format("%d",acc.getBalance()));
         AccountsFileManager.saveAccount(acc);
+
+        back();
     }
 
     public void back() {
