@@ -3,6 +3,6 @@ module com.example.demogui {
     requires javafx.fxml;
 
 
-    opens com.gui to javafx.fxml;
-    exports com.gui;
+    opens controllers to javafx.fxml;
+    exports controllers;
 }
