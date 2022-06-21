@@ -41,6 +41,18 @@ public class SelectAccountController {
 
     }
 
+    public void deposit() {
+
+    }
+
+    public void withdraw() {
+
+    }
+
+    public void transfer() {
+
+    }
+
     public void createAccount() throws IOException {
         Stage createAccStage = new Stage();
 
