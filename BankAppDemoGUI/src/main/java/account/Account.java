@@ -43,8 +43,14 @@ public class Account implements IAccount, Serializable {
 
     @Override
     public void transfer(Account target, int amount) throws Exception {
-        target.deposit(amount);
-        withdraw(amount);
+        try{
+            withdraw(amount);
+            target.deposit(amount);
+        }
+        catch(NullPointerException e) {
+            deposit(amount);
+            throw new NullPointerException();
+        }
     }
 
     @Override

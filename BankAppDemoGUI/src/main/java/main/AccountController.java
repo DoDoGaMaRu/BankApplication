@@ -16,10 +16,8 @@ public class AccountController {
 
     @FXML private Label accNum;
     @FXML private Label balance;
-    @FXML private TextField amount;
     @FXML private Label messageLabel;
     @FXML private TextField pwTextField;
-
 
 
     public void setAccount(Account acc) {
@@ -99,6 +97,7 @@ public class AccountController {
             messageLabel.setText("Wrong Pin!");
         }
     }
+
 
     public void refresh() {
         balance.setText(String.format("%d",acc.getBalance()));
